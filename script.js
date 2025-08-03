@@ -4,12 +4,11 @@ const repositoriesList = document.getElementById('repositories');
 
 let debounceTimeout;
 
-// Функция для очистки autocomplete
+
 function clearAutocomplete() {
     autocomplete.innerHTML = '';
 }
 
-// Функция для создания дебаунса
 function debounce(func, delay) {
     return function(...args) {
         clearTimeout(debounceTimeout);
@@ -17,7 +16,6 @@ function debounce(func, delay) {
     };
 }
 
-// Функция для получения данных с GitHub API
 async function fetchRepositories(query) {
     try {
         const response = await fetch(`https://api.github.com/search/repositories?q=${query}`);
@@ -31,7 +29,6 @@ async function fetchRepositories(query) {
     }
 }
 
-// Обработка ввода в поле поиска
 const handleInput = debounce(async () => {
     const query = searchInput.value.trim();
     
@@ -60,7 +57,7 @@ const handleInput = debounce(async () => {
     }
 }, 400);
 
-// Добавление репозитория в список
+
 function addRepository(repo) {
     const repoElement = document.createElement('div');
     repoElement.classList.add('repository');
@@ -84,10 +81,9 @@ function addRepository(repo) {
     });
 }
 
-// Обработчик событий
+
 searchInput.addEventListener('input', handleInput);
 
-// Делегирование событий для удаления
 repositoriesList.addEventListener('click', (event) => {
     if (event.target.classList.contains('remove-btn')) {
         const repoElement = event.target.closest('.repository');
