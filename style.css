@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 661px;
+  margin: 0 auto;
+  padding: 62px 77px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.autocomplete-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  width: 97%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.autocomplete {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.autocomplete div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgba(227, 227, 227, 1);
+}
+
+.autocomplete div:hover {
+  background-color: rgba(101, 205, 249, 1);
+}
+
+.repositories-list {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  border: solid 1px black;
+}
+
+.repository {
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(226, 123, 235, 1);
+}
+
+.repository-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.repository-name {
+  font-size: 16;
+  margin-right: 10px;
+}
+
+.remove-btn {
+  width: 42px;
+  height: 38.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.remove-btn::before,
+.remove-btn::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background: red;
+  top: 50%;
+}
+
+.remove-btn::before {
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.remove-btn::after {
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
